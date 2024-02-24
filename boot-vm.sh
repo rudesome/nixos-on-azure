@@ -169,8 +169,7 @@ az vm create                           \
   --size "${vm_size_d}"                \
   --os-disk-size-gb "${os_size_d}"     \
   --image "${img_id}"                  \
-  --admin-username "${USER}"           \
   --location "${location_d}"           \
   --storage-sku "Premium_LRS"          \
   --public-ip-sku Standard             \
-  --ssh-key-values "@/home/${USER}/.ssh/id_rsa.pub"
+  --ssh-key-values @~/.ssh/id_rsa.pub
