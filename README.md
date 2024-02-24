@@ -39,4 +39,4 @@ ssh -i ~/.ssh/id_rsa <username>@<public_ip>
 
 >
 > - username you have set in the `flake.nix` file
-> - public IP will be printed in the `boot-vm.sh` script
+> - public IP will be printed with running the `boot-vm.sh` script
