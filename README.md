@@ -1,6 +1,8 @@
 # NixOS on Azure
 Run NixOS on an Azure Gen 2 VM
 
+---
+
 ## Preparation
 
 1. Set your username in the `flake.nix` file
@@ -28,3 +30,13 @@ also don't look at the azcopy log file, it spams 500 errors but these can be ign
 ```sh
 nix build .#azure-image --impure
 ```
+
+## SSH into server
+
+```sh
+ssh -i ~/.ssh/id_rsa <username>@<public_ip>
+```
+
+>
+> - username you have set in the `flake.nix` file
+> - public IP will be printed in the `boot-vm.sh` script
