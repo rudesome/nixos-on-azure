@@ -40,3 +40,30 @@ ssh -i ~/.ssh/id_rsa <username>@<public_ip>
 >
 > - username you have set in the `flake.nix` file
 > - public IP will be printed with running the `boot-vm.sh` script
+
+
+---
+
+```
+❯ neofetch       
+          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            rudesome@nixos 
+          ▜███▙       ▜███▙  ▟███▛            -------------- 
+           ▜███▙       ▜███▙▟███▛             OS: NixOS 23.11.20240215.c68a9fc (Tapir) x86_64 
+            ▜███▙       ▜██████▛              Host: Microsoft Corporation Virtual Machine 
+     ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.7.4 
+    ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 45 secs 
+           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 368 (nix-system), 798 (nix-user) 
+          ▟███▛             ▜██▛ ▟███▛        Shell: zsh 5.9 
+         ▟███▛               ▜▛ ▟███▛         Terminal: /dev/pts/0 
+▟███████████▛                  ▟██████████▙   CPU: Intel Xeon Platinum 8171M (1) @ 2.095GHz 
+▜██████████▛                  ▟███████████▛   Memory: 384MiB / 3424MiB 
+      ▟███▛ ▟▙               ▟███▛
+     ▟███▛ ▟██▙             ▟███▛                                     
+    ▟███▛  ▜███▙           ▝▀▀▀▀                                      
+    ▜██▛    ▜███▙ ▜██████████████████▛
+     ▜▛     ▟████▙ ▜████████████████▛
+           ▟██████▙       ▜███▙
+          ▟███▛▜███▙       ▜███▙
+         ▟███▛  ▜███▙       ▜███▙
+         ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘`
+```
