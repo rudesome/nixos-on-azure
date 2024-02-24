@@ -1,7 +1,7 @@
 # NixOS on Azure
 Run NixOS on an Azure Gen 2 VM
 
-## Preperation
+## Preparation
 
 1. Set your username in the `flake.nix` file
 2. use [direnv](https://github.com/nix-community/nix-direnv) or run `nix develop`
