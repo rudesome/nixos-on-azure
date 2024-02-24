@@ -29,7 +29,6 @@ show_id() {
     --output tsv
 }
 
-
 usage() {
   echo ''
   echo 'USAGE: (Every switch requires an argument)'
