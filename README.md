@@ -28,4 +28,3 @@ also don't look at the azcopy log file, it spams 500 errors but these can be ign
 ```sh
 nix build .#azure-image --impure
 ```
-
