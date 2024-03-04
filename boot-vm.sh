@@ -72,8 +72,9 @@ while [ $# -gt 0 ]; do
           img_id="$2"
           ;;
         *)  # image name
-          img_id="$(az image list             \
-            --query "[?name=='"$2"'].{ID:id}" \
+          img_id="$(az image list                \
+            --resource-group "${resource_group}" \
+            --query "[?name=='"$2"'].{ID:id}"    \
             --output tsv
           )"
        esac
@@ -112,8 +113,8 @@ fi
 ####################################################
 
 location_d="${location:-"westeurope"}"
-os_size_d="${vm_size:-"42"}"
-vm_size_d="${os_size:-"Standard_DS1_v2"}"
+os_size_d="${os_size:-"42"}"
+vm_size_d="${vm_size:-"Standard_DS1_v2"}"
 
 # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 set -euxo pipefail

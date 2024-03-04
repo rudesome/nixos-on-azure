@@ -28,6 +28,7 @@
             buildInputs = with pkgs; [
               azure-cli
               azure-storage-azcopy
+              jq
             ];
           };
     };
