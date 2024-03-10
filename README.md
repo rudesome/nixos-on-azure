@@ -67,3 +67,8 @@ ssh -i ~/.ssh/id_rsa <username>@<public_ip>
          ▟███▛  ▜███▙       ▜███▙
          ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 ```
+
+# Credits
+
+### [Society for the Blind](https://github.com/society-for-the-blind/nixos-azure-deploy)
+### [Plommonsorbet](https://github.com/Plommonsorbet/nixos-azure-gen-2-vm-example)
