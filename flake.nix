@@ -31,6 +31,20 @@
               jq
             ];
           };
+
+      devShells."aarch64-darwin".default =
+        let
+          pkgs = import nixos { system = "aarch64-darwin"; };
+        in
+        with pkgs;
+        pkgs.mkShell
+          {
+            buildinputs = with pkgs; [
+              azure-cli
+              azure-storage-azcopy
+              jq
+            ];
+          };
     };
 }
 
