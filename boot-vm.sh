@@ -72,9 +72,8 @@ while [ $# -gt 0 ]; do
           img_id="$2"
           ;;
         *)  # image name
-          img_id="$(az image list                \
-            --resource-group "${resource_group}" \
-            --query "[?name=='"$2"'].{ID:id}"    \
+          img_id="$(az image list             \
+            --query "[?name=='"$2"'].{ID:id}" \
             --output tsv
           )"
        esac
