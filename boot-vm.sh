@@ -45,7 +45,7 @@ usage() {
   echo '-s --vm-size        See https://azure.microsoft.com/pricing/details/virtual-machines/ for size info.'
   echo '                    Default value: "Standard_DS1_v2"'
   echo ''
-  echo '-d --os-size        OS disk size in GB to create.'
+  echo '-d --os-size-gb     OS disk size in GB to create.'
   echo '                    Default value: "42"'
   echo ''
   echo '-l --location       Values from `az account list-locations`.'
@@ -84,7 +84,7 @@ while [ $# -gt 0 ]; do
     -s|--vm-size)
       vm_size="$2"
       ;;
-    -d|--os-disk-size-gb)
+    -d|--os-size-gb)
       os_size="$2"
       ;;
     *)
