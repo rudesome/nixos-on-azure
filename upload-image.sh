@@ -130,7 +130,7 @@ if ! az disk show -g "${resource_group}" -n "${img_name}" &>/dev/null; then
       --resource-group "${resource_group}" \
       --name "${img_name}" \
       --duration-in-seconds ${timeout} \
-        | jq -r '.accessSas'
+        | jq -r '.accessSAS'
   )"
 
   azcopy copy "${img_file}" "${sasurl}" \

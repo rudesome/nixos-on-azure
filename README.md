@@ -6,15 +6,11 @@ Run NixOS on an Azure Gen 2 VM
 ## Preparation
 
 1. Set your username in the `flake.nix` file
-2. use [direnv](https://github.com/nix-community/nix-direnv) or run `nix develop`
+2. `nix develop`
 3. run `az login` and login with your Azure credentials
-4. Create an RSA SSH key pair (id_rsa) - [ed25519 keys are not supported by Azure](https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/ed25519-ssh-keys)
+4. Create an ed25519 SSH key pair (id_ed25519)
 
-## Upload image
-
-it can take a while to upload the `.vhd` (for me it is +/- 50 min), <br>
-if the upload time-out; you may want to change the token duration. <br>
-also don't look at the azcopy log file, it spams 500 errors but these can be ignored..
+## Upload image and boot VM
 
 ```sh
 ./upload-image.sh --resource-group images --image-name nixos-gen2
@@ -34,7 +30,7 @@ nix build .#azure-image --impure
 ## SSH into server
 
 ```sh
-ssh -i ~/.ssh/id_rsa <username>@<public_ip>
+ssh <username>@<public_ip>
 ```
 
 >
@@ -45,19 +41,19 @@ ssh -i ~/.ssh/id_rsa <username>@<public_ip>
 ---
 
 ```
-❯ neofetch
-          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            rudesome@nixos 
-          ▜███▙       ▜███▙  ▟███▛            -------------- 
-           ▜███▙       ▜███▙▟███▛             OS: NixOS 23.11.20240215.c68a9fc (Tapir) x86_64
+> neofetch
+          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            rudesome@nixos
+          ▜███▙       ▜███▙  ▟███▛            --------------
+           ▜███▙       ▜███▙▟███▛             OS: NixOS 25.11pre-git (Xantusia) x86_64
             ▜███▙       ▜██████▛              Host: Microsoft Corporation Virtual Machine
-     ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.7.4
-    ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 45 secs
-           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 368 (nix-system), 798 (nix-user)
+     ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.12.30
+    ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 1 min
+           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 348 (nix-system), 330 (nix-user)
           ▟███▛             ▜██▛ ▟███▛        Shell: zsh 5.9
-         ▟███▛               ▜▛ ▟███▛         Terminal: /dev/pts/0
-▟███████████▛                  ▟██████████▙   CPU: Intel Xeon Platinum 8171M (1) @ 2.095GHz
-▜██████████▛                  ▟███████████▛   Memory: 384MiB / 3424MiB
-      ▟███▛ ▟▙               ▟███▛
+         ▟███▛               ▜▛ ▟███▛         Resolution: 1024x768
+▟███████████▛                  ▟██████████▙   Terminal: /dev/pts/0
+▜██████████▛                  ▟███████████▛   CPU: Intel Xeon Platinum 8272CL (1) @ 2.593GHz
+      ▟███▛ ▟▙               ▟███▛            Memory: 629MiB / 3415MiB
      ▟███▛ ▟██▙             ▟███▛
     ▟███▛  ▜███▙           ▝▀▀▀▀
     ▜██▛    ▜███▙ ▜██████████████████▛
