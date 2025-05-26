@@ -172,4 +172,4 @@ az vm create                           \
   --location "${location_d}"           \
   --storage-sku "Premium_LRS"          \
   --public-ip-sku Standard             \
-  --ssh-key-values @~/.ssh/id_rsa.pub
+  --ssh-key-values @~/.ssh/id_ed25519.pub
