@@ -10,7 +10,7 @@ Run NixOS on an Azure Gen 2 VM
 3. run `az login` and login with your Azure credentials
 4. Create an ed25519 SSH key pair
 
-## Upload image and boot NixOS VM
+## Upload image
 
 ```sh
 ./upload-image.sh --resource-group images --image-name nixos-gen2
